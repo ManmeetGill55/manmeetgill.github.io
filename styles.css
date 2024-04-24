@@ -1,0 +1,164 @@
+
+
+/* Optional: Adjust styles for header, footer, and flip-cards as needed */
+.header,
+.footer {
+  text-align: center;
+}
+
+.header {
+  display: grid;
+margin: auto;
+  align-items: center;
+  background-color: #bbb;
+}
+footer{
+  background-color: cadetblue;
+}
+
+.buttons {
+  display: flex;
+}
+
+.buttons button {
+  margin-left: 10px;
+}
+
+.left,
+.middle,
+.right {
+  text-align: center;
+}
+
+.flip-card {
+  width: 280px; /* Adjust the width of flip cards */
+  height: 280px; /* Adjust the height of flip cards */
+  perspective: 1000px; /* Add perspective for 3D effect */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+@media screen and (max-width: 480px) {
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr; 
+  grid-template-rows: 1fr, 1fr, 1fr, 1fr 1fr;
+  grid-gap: 20px; /* Adjust the gap between grid items */
+
+  header{
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+.left{
+  grid-row: 2;
+  grid-column: 1;
+}
+.middle{
+  grid-row: 3;
+  grid-column: 1;
+}
+.right {
+grid-row: 4;
+grid-column: 1;
+}
+.footer{
+  grid-row: 5;
+  grid-column: 1;
+}
+
+}
+}
+
+@media screen and (min-width: 481px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr, 1fr, 1fr, 1fr 1fr; 
+    grid-template-rows: 1fr, 1fr, 1fr, 1fr 1fr;
+    grid-gap: 20px; /* Adjust the gap between grid items */
+  
+    header{
+      grid-row: 1;
+      grid-column: 1/6;
+    }
+  
+  .left{
+    grid-row: 2/3;
+    grid-column: 1/3;
+  }
+  .middle{
+    grid-row: 2/3;
+    grid-column: 3/6;
+  }
+  .right {
+  grid-row: 4;
+  grid-column: 2/3;
+  }
+  .footer{
+    grid-row: 5;
+    grid-column: 1/6;
+  }
+}
+}
+
+@media screen and (min-width: 769px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr, 1fr, 1fr; 
+    grid-template-rows: 1fr, 1fr, 1fr;
+    grid-gap: 20px; /* Adjust the gap between grid items */
+  
+    header{
+      grid-row: 1;
+      grid-column: 1/4;
+    }
+  
+  .left{
+    grid-row: 2;
+    grid-column: 1/2;
+  }
+  .middle{
+    grid-row: 2;
+    grid-column: 2/3;
+  }
+  .right {
+  grid-row: 2;
+  grid-column: 3/4;
+  }
+  .footer{
+    grid-row: 3;
+    grid-column: 1/4;
+  }
+  
+  }
+  }
